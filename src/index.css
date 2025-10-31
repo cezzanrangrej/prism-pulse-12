@@ -54,10 +54,11 @@ All colors MUST be HSL.
   }
 }
 
-/* Starfield animation */
+/* Prism animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) translateX(0px); }
-  50% { transform: translateY(-20px) translateX(10px); }
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) translateX(10px) rotate(2deg); }
+  66% { transform: translateY(-10px) translateX(-10px) rotate(-2deg); }
 }
 
 @keyframes twinkle {
@@ -68,6 +69,27 @@ All colors MUST be HSL.
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cube-float {
+  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+  33% { transform: translateY(-15px) rotateX(5deg) rotateY(5deg); }
+  66% { transform: translateY(-8px) rotateX(-5deg) rotateY(-5deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px hsl(189 100% 50% / 0.3), 0 0 40px hsl(293 84% 58% / 0.2); }
+  50% { box-shadow: 0 0 30px hsl(189 100% 50% / 0.5), 0 0 60px hsl(293 84% 58% / 0.4); }
 }
 
 /* Glassmorphic styles */
@@ -110,6 +132,27 @@ All colors MUST be HSL.
 
 .btn-gradient:hover::before {
   transform: translateX(100%);
+}
+
+/* Utility animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-cube-float {
+  animation: cube-float 8s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
 }
 
 @layer base {

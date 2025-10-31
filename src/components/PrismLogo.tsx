@@ -1,4 +1,4 @@
-import { Hexagon } from "lucide-react";
+import AnimatedCubes from "./AnimatedCubes";
 
 const PrismLogo = ({ size = "md" }: { size?: "sm" | "md" | "lg" }) => {
   const sizes = {
@@ -7,24 +7,24 @@ const PrismLogo = ({ size = "md" }: { size?: "sm" | "md" | "lg" }) => {
     lg: "w-16 h-16",
   };
 
-  const iconSizes = {
-    sm: 20,
-    md: 28,
-    lg: 36,
+  const pixelSizes = {
+    sm: 32,
+    md: 48,
+    lg: 64,
   };
 
   return (
     <div className="flex items-center gap-3">
       <div className={`${sizes[size]} relative flex items-center justify-center`}>
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan to-purple opacity-20 blur-xl rounded-lg" />
-        <div className="relative bg-gradient-to-br from-cyan to-purple p-2 rounded-lg">
-          <Hexagon className="text-background" size={iconSizes[size]} fill="currentColor" />
+        <div className="absolute inset-0 bg-cyan/5 blur-lg rounded-lg" />
+        <div className="relative z-10 opacity-95">
+          <AnimatedCubes size={pixelSizes[size]} />
         </div>
       </div>
       <span className={`font-bold bg-gradient-to-r from-cyan to-purple bg-clip-text text-transparent ${
         size === "sm" ? "text-xl" : size === "md" ? "text-2xl" : "text-3xl"
       }`}>
-        Project Prism
+        Prism
       </span>
     </div>
   );

@@ -20,12 +20,12 @@ const Connections = () => {
   };
 
   const statsPlatforms = [
-    { name: "Githuat", icon: Github, type: "oauth" },
+    { name: "GitHub", icon: Github, type: "oauth" },
     { name: "LeetCode", icon: Code, type: "credentials" },
   ];
 
   const taskPlatforms = [
-    { name: "LodoLoale", icon: CheckCircle },
+    { name: "OpenProject", icon: CheckCircle },
     { name: "Todoist", icon: CheckCircle },
     { name: "Jira", icon: CheckCircle },
     { name: "Jira", icon: CheckCircle },
@@ -56,7 +56,7 @@ const Connections = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <Github className="text-cyan" size={24} />
-                    <span>Githuat</span>
+                    <span>GitHub</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">

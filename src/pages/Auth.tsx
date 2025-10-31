@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StarField from "@/components/StarField";
 import PrismLogo from "@/components/PrismLogo";
+import AnimatedCubes from "@/components/AnimatedCubes";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -38,33 +39,12 @@ const Auth = () => {
       
       <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8 items-center">
-          {/* Left side - 3D Cube illustration */}
+          {/* Left side - Animated Logo */}
           <div className="hidden lg:flex items-center justify-center animate-float">
-            <div className="relative w-64 h-64">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan to-purple opacity-30 blur-3xl rounded-full" />
-              <div className="relative">
-                <svg viewBox="0 0 200 200" className="w-full h-full">
-                  <defs>
-                    <linearGradient id="cubeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="hsl(189, 100%, 50%)" />
-                      <stop offset="100%" stopColor="hsl(293, 84%, 58%)" />
-                    </linearGradient>
-                    <linearGradient id="cubeGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="hsl(189, 100%, 50%)" />
-                      <stop offset="100%" stopColor="hsl(200, 100%, 60%)" />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Back face */}
-                  <polygon points="100,40 140,60 100,80 60,60" fill="url(#cubeGradient1)" opacity="0.6" />
-                  <polygon points="60,60 60,100 100,120 100,80" fill="url(#cubeGradient2)" opacity="0.7" />
-                  <polygon points="100,80 140,60 140,100 100,120" fill="url(#cubeGradient1)" opacity="0.8" />
-                  
-                  {/* Front face */}
-                  <polygon points="100,100 140,120 100,140 60,120" fill="url(#cubeGradient1)" opacity="0.9" />
-                  <polygon points="60,120 60,160 100,180 100,140" fill="url(#cubeGradient2)" opacity="0.95" />
-                  <polygon points="100,140 140,120 140,160 100,180" fill="url(#cubeGradient1)" />
-                </svg>
+            <div className="relative w-80 h-80">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-purple/20 opacity-50 blur-3xl rounded-full animate-glow-pulse" />
+              <div className="relative flex items-center justify-center h-full">
+                <AnimatedCubes size={320} />
               </div>
             </div>
           </div>
